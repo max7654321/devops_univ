@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CronManager", "CronManager\CronManager.csproj", "{7AE9D7F7-37FF-4DFB-B113-48B0FC37EABC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7AE9D7F7-37FF-4DFB-B113-48B0FC37EABC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AE9D7F7-37FF-4DFB-B113-48B0FC37EABC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AE9D7F7-37FF-4DFB-B113-48B0FC37EABC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AE9D7F7-37FF-4DFB-B113-48B0FC37EABC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
