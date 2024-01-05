@@ -28,9 +28,9 @@ jobs:
           token: ${{ secrets.TELEGRAM_TOKEN }}
           format: markdown
           message: |
-            🚀 **New Pull Request**
+             New Pull Request
 
-            **💥 Title:** ${{ steps.pr_details.outputs.title }}
-            **🔀 Branch:** ${{ steps.pr_details.outputs.branch }} => ${{ steps.pr_details.outputs.base_branch }}
-            **👤 Created by:** ${{ steps.pr_details.outputs.user }}
-            **🔗 Link:** [View PR](${{ steps.pr_details.outputs.pr_url }})
+            ** Title:** ${{ steps.pr_details.outputs.title }}
+            ** Branch:** ${{ steps.pr_details.outputs.branch }} => ${{ steps.pr_details.outputs.base_branch }}
+            ** Created by:** ${{ steps.pr_details.outputs.user }}
+            ** Link:** [View PR](${{ steps.pr_details.outputs.pr_url }})
