@@ -1,36 +1,31 @@
+# This is a basic workflow to help you get started with Actions
+
 name: Telegram notification
 
-on:
-  pull_request:
+# Controls when the action will run. Triggers the workflow on pull request
+on: [pull_request]
 
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
+  # This workflow contains a single job called "build"
   build:
+    # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
+    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
 
-      - name: Get PR details
-        id: pr_details
-        run: |
-          echo "::set-output name=title::$(echo ${{ github.event.pull_request.title }})"
-          echo "::set-output name=body::$(echo ${{ github.event.pull_request.body }})"
-          echo "::set-output name=branch::$(echo ${{ github.event.pull_request.head.ref }})"
-          echo "::set-output name=base_branch::$(echo ${{ github.event.pull_request.base.ref }})"
-          echo "::set-output name=user::$(echo ${{ github.event.pull_request.user.login }})"
-          echo "::set-output name=pr_url::$(echo ${{ github.event.pull_request.html_url }})"
-
+      # Runs the telegram notify action to send a notification
       - name: Telegram Notify
         uses: appleboy/telegram-action@master
         with:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
-          format: markdown
           message: |
-             New Pull Request
-
-            ** Title:** ${{ steps.pr_details.outputs.title }}
-            ** Branch:** ${{ steps.pr_details.outputs.branch }} => ${{ steps.pr_details.outputs.base_branch }}
-            ** Created by:** ${{ steps.pr_details.outputs.user }}
-            ** Link:** [View PR](${{ steps.pr_details.outputs.pr_url }})
+            ${{ github.actor }} created commit.
+            
+            Repository: ${{ github.repository }}
+            
+            See changes: https://github.com/${{ github.repository }}/commit/${{github.sha}}
