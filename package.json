@@ -1,0 +1,26 @@
+{
+	"name": "github_task",
+	"version": "1.0.0",
+	"description": "Sorry, not much for MD file:)",
+	"main": "index.js",
+	"scripts": {
+		"test": "jest"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Serhiy-dotcom/devops_univer.git"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/Serhiy-dotcom/devops_univer/issues"
+	},
+	"homepage": "https://github.com/Serhiy-dotcom/devops_univer#readme",
+	"devDependencies": {
+		"jest": "^29.7.0"
+	},
+	"jest": {
+		"testEnvironment": "node"
+	}
+}
